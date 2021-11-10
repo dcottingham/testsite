@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' *.demdex.net;
+            script-src 'self' 'unsafe-inline' assets.adobedtm.com *.tt.omtrdc.net *.adobe.com cdn.jsdelivr.net;
+            style-src 'self' 'unsafe-inline' cdn.tt.omtrdc.net;
+            img-src * data:;
+            connect-src 'self' *.alloyio.com *.demdex.net *.adobedc.net *.tt.omtrdc.net *.adobe.com mboxedge35.tt.omtrdc.net"
+    />
+    <meta name="theme-color" content="#000000" />
+    <script>
+      window.targetGlobalSettings = {  
+        clientCode: "unifiedjslab",
+        // clientCode: "demo1",
+        // imsOrgId: "97D1F3F459CE0AD80A495CBE@AdobeOrg", 
+        decisioningMethod: "server-side",
+        // serverDomain: "unifiedjslab.tt.omtrdc.net",
+        serverDomain: "edge1.qe-ci1.tt.omtrdc.net",
+        // serverDomain: "edge1.qe6.tt.omtrdc.net",
+        scheme: "https:" // Not sure why this doesn't work
+      };
+    </script>
+    <script src="at.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <p>Hello World</p>
+
+    <script>
+      adobe.target.getOffers({
+        request: {
+          context: { channel: "web" },
+          execute: {
+            mboxes: [
+              {
+                name: "don-mbox",
+                index: 1
+              }
+            ]
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
