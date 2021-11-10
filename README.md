@@ -3,7 +3,6 @@ A simple html page for testing
 
 One easy way to create a server that runs this site is the [http-server](https://www.npmjs.com/package/http-server) npm package.
 
-#bash
 ```
 npm install -g http-server
 cd testsite
